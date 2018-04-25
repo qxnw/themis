@@ -1,9 +1,8 @@
 <template>
-<div  class="border-0">
 
-  <b-navbar toggleable="md">
-    <b-navbar-toggle target="nav_collapse" class="float-right"></b-navbar-toggle>
-    <b-collapse is-nav id="nav_collapse" class="mt-2 float-right">
+  <b-navbar toggleable="md" variant="info" class="col-2">
+    <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+    <b-collapse is-nav id="nav_collapse">
       <b-list-group>
         <b-list-group-item class="align-middle" v-for="item in navs" :key="item.sort">
           <span @click="select(item)"> {{item.title}}</span>
@@ -19,7 +18,7 @@
       </b-list-group>
     </b-collapse>
   </b-navbar>
-</div>
+
 </template>
 
 <script>
@@ -35,11 +34,13 @@ export default {
     }
   },
   mounted() {
-    this.navs = [{
+    this.navs = [
+      {
         id: 1,
         title: "安防系统",
         showChildren: true,
-        children: [{
+        children: [
+          {
             id: 11,
             title: "平台配置",
             url: "/plat/:id"
@@ -54,7 +55,8 @@ export default {
       {
         title: "高铁wifi",
         showChildren: true,
-        children: [{
+        children: [
+          {
             title: "平台配置",
             url: "/plat/:id"
           },
